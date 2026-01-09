@@ -4,7 +4,7 @@ import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import HeroSection from "@/components/home/HeroSection";
 import SectionWrapper from "@/components/common/SectionWrapper";
-import ServiceCard from "@/components/home/Services/ServiceCard";
+import CardServico from "@/components/home/Services/CardServicos";
 
 export default function Services() {
   const services = [
@@ -103,12 +103,12 @@ export default function Services() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
             {services.map((service, index) => (
-              <ServiceCard
+              <CardServico
                 key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                features={service.features}
+                icone={service.icon}
+                titulo={service.title}
+                descricao={service.description}
+                funcionalidades={service.features}
                 href={service.href}
                 highlighted={service.highlighted}
               />

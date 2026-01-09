@@ -1,24 +1,23 @@
 import { ReactNode } from "react";
 import { Link } from "wouter";
-import { ArrowRight } from "lucide-react";
 
-interface ServiceCardProps {
-  icon: ReactNode;
-  title: string;
-  description: string;
-  features?: string[];
+interface CardServicoProps {
+  icone: ReactNode;
+  titulo: string;
+  descricao: string;
+  funcionalidades?: string[];
   href?: string;
   highlighted?: boolean | undefined;
 }
 
-export default function ServiceCard({
-  icon,
-  title,
-  description,
-  features,
+export default function CardServico({
+  icone: icon,
+  titulo: title,
+  descricao: description,
+  funcionalidades: features,
   href,
   highlighted = false,
-}: ServiceCardProps) {
+}: CardServicoProps) {
   const baseClasses = `
     relative p-8 rounded-lg transition-all duration-300 h-full flex flex-col
     ${
@@ -30,7 +29,7 @@ export default function ServiceCard({
 
   const content = (
     <>
-      {/* Icon */}
+      {/* Icone */}
       <div
         className={`
           w-16 h-16 rounded-lg flex items-center justify-center mb-6
@@ -82,7 +81,7 @@ export default function ServiceCard({
       )}
 
       {/* CTA */}
-      {href && (
+      {/* {href && (
         <div className="flex items-center gap-2 font-semibold group mt-auto pt-4">
           <span
             className={`
@@ -100,7 +99,7 @@ export default function ServiceCard({
           `}
           />
         </div>
-      )}
+      )} */}
     </>
   );
 
