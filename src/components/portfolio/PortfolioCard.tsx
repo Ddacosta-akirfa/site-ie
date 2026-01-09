@@ -1,21 +1,21 @@
-import { Link } from 'wouter';
-import { ArrowRight } from 'lucide-react';
+import { Link } from "wouter";
+import { ArrowRight } from "lucide-react";
 
 interface PortfolioCardProps {
-  image: string;
-  title: string;
-  category: string;
-  description: string;
-  results?: string[];
+  imagem: string;
+  titulo: string;
+  categoria: string;
+  descricao: string;
+  resultados?: string[];
   href?: string;
 }
 
 export default function PortfolioCard({
-  image,
-  title,
-  category,
-  description,
-  results,
+  imagem,
+  titulo,
+  categoria,
+  descricao,
+  resultados,
   href,
 }: PortfolioCardProps) {
   const content = (
@@ -23,8 +23,8 @@ export default function PortfolioCard({
       {/* Image Container */}
       <div className="relative h-64 md:h-80 overflow-hidden rounded-lg mb-6">
         <img
-          src={image}
-          alt={title}
+          src={imagem}
+          alt={titulo}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
         {/* Overlay */}
@@ -44,24 +44,22 @@ export default function PortfolioCard({
         {/* Category Badge */}
         <div className="inline-block">
           <span className="text-xs font-semibold text-secondary uppercase tracking-wide">
-            {category}
+            {categoria}
           </span>
         </div>
 
         {/* Title */}
         <h3 className="text-xl md:text-2xl font-bold text-primary group-hover:text-secondary transition-colors">
-          {title}
+          {titulo}
         </h3>
 
         {/* Description */}
-        <p className="text-foreground/70 leading-relaxed">
-          {description}
-        </p>
+        <p className="text-foreground/70 leading-relaxed">{descricao}</p>
 
         {/* Results */}
-        {results && results.length > 0 && (
+        {resultados && resultados.length > 0 && (
           <ul className="space-y-2 pt-4">
-            {results.map((result, index) => (
+            {resultados.map((result, index) => (
               <li key={index} className="flex items-center gap-2 text-sm">
                 <span className="text-secondary font-bold">→</span>
                 <span>{result}</span>

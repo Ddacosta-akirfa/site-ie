@@ -1,39 +1,36 @@
-import { Star } from 'lucide-react';
+import { Star } from "lucide-react";
 
-interface TestimonialCardProps {
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
+interface CardDepoimentoProps {
+  declaracao: string;
+  autor: string;
+  funcao: string;
+  empresa: string;
   avatar?: string;
-  rating?: number;
+  classificacao?: number;
 }
 
-export default function TestimonialCard({
-  quote,
-  author,
-  role,
-  company,
+export default function CardDepoimento({
+  declaracao,
+  autor,
+  funcao,
+  empresa,
   avatar,
-  rating = 5,
-}: TestimonialCardProps) {
+  classificacao = 5,
+}: CardDepoimentoProps) {
   return (
     <div className="bg-card border border-border rounded-lg p-8 hover:shadow-lg transition-shadow">
       {/* Rating Stars */}
-      {rating > 0 && (
+      {classificacao > 0 && (
         <div className="flex gap-1 mb-6">
-          {Array.from({ length: rating }).map((_, i) => (
-            <Star
-              key={i}
-              className="w-5 h-5 fill-secondary text-secondary"
-            />
+          {Array.from({ length: classificacao }).map((_, i) => (
+            <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
           ))}
         </div>
       )}
 
       {/* Quote */}
       <blockquote className="text-lg text-foreground/80 mb-6 leading-relaxed italic">
-        "{quote}"
+        "{declaracao}"
       </blockquote>
 
       {/* Author Info */}
@@ -41,14 +38,14 @@ export default function TestimonialCard({
         {avatar && (
           <img
             src={avatar}
-            alt={author}
+            alt={autor}
             className="w-12 h-12 rounded-full object-cover"
           />
         )}
         <div>
-          <p className="font-semibold text-primary">{author}</p>
+          <p className="font-semibold text-primary">{autor}</p>
           <p className="text-sm text-foreground/60">
-            {role} • {company}
+            {funcao} • {empresa}
           </p>
         </div>
       </div>
